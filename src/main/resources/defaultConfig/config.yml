@@ -1,0 +1,10 @@
+reservedSlots: 1
+allowPrioritizedPlayersViaConfig: true
+mustReconnectWithinSec: 120
+kickMessageQueued: |2-
+
+  &cThe server is currently full!&r
+
+  You are in the queue.
+  Position &a%d/%d&r.
+  &7Please reconnect within the next &6%d sec&7 to keep your position.&r

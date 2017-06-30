@@ -1,0 +1,53 @@
+name: ${project.name}
+version: ${project.version}
+description: Queues player when the server is full
+author: _BLU https://github.com/0blu
+main: wtf.blu.simpleQueue.SimpleQueuePlugin
+
+commands:
+  sqversion:
+    description: Displays version of SimpleQueue Plugin
+    permission: simplequeue.sqversion
+    usage: /sqversion
+  sqqueue:
+    description: Lists current players in queue
+    permission: simplequeue.sqqueue
+    usage: /sqqueue
+  sqlist:
+    description: Lists all players in the prioritizedPlayers.yml file
+    permission: simplequeue.sqlist
+    usage: /sqlist
+  sqadd:
+    description: Adds a player to the prioritizedPlayers.yml file
+    permission: simplequeue.sqadd
+    usage: /sqadd [player]
+  sqremove:
+    description: Removes a player from the prioritizedPlayers.yml file
+    permission: simplequeue.sqremove
+    usage: /sqremove [player]
+
+permissions:
+  simplequeue.*:
+    description: Grants access to all SimpleQueue commands and enables the player to connect to the server even if the slot limit is reached
+    children:
+      simplequeue.ignoreslotlimit: true
+      simplequeue.prioritized: true
+      simplequeue.sqversion: true
+      simplequeue.sqqueue: true
+      simplequeue.sqlist: true
+      simplequeue.sqadd: true
+      simplequeue.sqremove: true
+  simplequeue.ignoreslotlimit:
+    description: Allows the user to connect to the server even if the slot limit is reached
+  simplequeue.prioritized:
+    description: Puts the user in front of normal users in the queue and uses reserved slots
+  simplequeue.sqversion:
+    description: Grants access to the /sqversion command - Displays version of SimpleQueue Plugin
+  simplequeue.sqqueue:
+    description: Grants access to the /sqqueue command - Lists current players in queue
+  simplequeue.sqlist:
+    description: Grants access to the /sqlist command - Lists all players in the prioritizedPlayers.yml file
+  simplequeue.sqadd:
+    description: Grants access to the /sqadd command - Adds a player to the prioritizedPlayers.yml file
+  simplequeue.sqremove:
+    description: Grants access to the /sqremove command - Removes a player from the prioritizedPlayers.yml file
